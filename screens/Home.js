@@ -1,11 +1,18 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView, Image } from 'react-native'
 import React from 'react'
+
+import Logo from '../images/logo.png'
 
 const Home = () => {
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <SafeAreaView className="bg-white h-full">
+      <View className="">
+        <Image
+          className = "w-28 h-28 rounded-full object-cover"
+          source={Logo}
+        />
+      </View>
+    </SafeAreaView>
   )
 }
 
