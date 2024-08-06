@@ -1,17 +1,25 @@
 import { View, Text, TouchableOpacity, FlatList, Image } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+import { useSelector } from 'react-redux'
+import { selectOrigin } from '../redux/slices/navSlice'
 
 
 const NavOptionsCard = ({ item, data }) => {
+    const navigation = useNavigation()
+    const origin = useSelector(selectOrigin)
     return (
-        <View>
+        <View className={`${!origin && 'opacity-20'}`}>
             <FlatList
                 data={data}
                 keyExtractor={(item) => item.id}
                 horizontal
                 className="mt-4"
                 renderItem={({ item }) => (
-                    <TouchableOpacity className="bg-white p-4 m-2 rounded-lg shadow-md border border-gray-200">
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate(item.screen)}
+                        className="bg-white p-4 m-2 rounded-lg shadow-md border border-gray-200"
+                        disabled={!origin}>
                         <Image
                             className="h-40 w-40 rounded-lg"
                             source={{ uri: item.image }}
