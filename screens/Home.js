@@ -1,24 +1,92 @@
-import { View, Text, SafeAreaView, Image } from 'react-native'
+import { View, Text, SafeAreaView, Image, StyleSheet, Platform } from 'react-native'
 import React from 'react'
 
 import Logo from '../images/logo.png'
 
+// Google
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
+
+// ENV
+import { GOOGLE_KEY } from '@env'
 
 // Components
 import NavOptions from '../components/NavOptions'
+import { setDestination, setOrigin } from '../redux/slices/navSlice'
+// Redux
+import { useDispatch } from 'react-redux'
 
 const Home = () => {
+
+  const dispatch = useDispatch();
+
   return (
-    <SafeAreaView className="bg-white h-full">
-      <View className="">
+    <SafeAreaView style={styles.container}>
+      <View style={styles.logoContainer}>
         <Image
-          className = "w-72 h-52 self-center object-cover"
+          style={styles.logo}
           source={Logo}
         />
       </View>
-      <NavOptions/>
+
+      <GooglePlacesAutocomplete
+        placeholder='Where From?'
+        query={{
+          key: GOOGLE_KEY,
+          language: 'en'
+        }}
+        onPress={(data, details = null) => {
+          dispatch(setOrigin({
+            location: details.geometry.location,
+            description: data.description
+          }))
+
+          dispatch(setDestination(null))
+        }}
+        fetchDetails={true}
+        returnKeyType={"search"}
+        enablePoweredByContainer={false}
+        minLength={2}
+        nearbyPlacesAPI='GooglePlacesSearch'
+        debounce={400}
+        styles={autocompleteStyles}
+      />
+
+      <NavOptions />
     </SafeAreaView>
-  )
+  );
 }
 
-export default Home
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    marginBottom: 0,
+    paddingBottom: 0,
+    paddingTop: Platform.OS === 'android' ? 0 : 20 // Android'da ek boşluk olmaması için
+  },
+  logoContainer: {
+    alignItems: 'center',
+    marginBottom: 10 // Gerekirse burayı ayarlayın
+  },
+  logo: {
+    width: 288, // 72 * 4
+    height: 208, // 52 * 4
+    resizeMode: 'cover'
+  }
+});
+
+const autocompleteStyles = {
+  container: {
+    flex: 0,
+    marginBottom: 0,
+    paddingBottom: 0,
+  },
+  textInput: {
+    paddingBottom: 0,
+  },
+  listView: {
+    marginBottom: 0,
+  }
+};
+
+export default Home;
