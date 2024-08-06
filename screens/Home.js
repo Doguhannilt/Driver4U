@@ -3,15 +3,20 @@ import React from 'react'
 
 import Logo from '../images/logo.png'
 
+
+// Components
+import NavOptions from '../components/NavOptions'
+
 const Home = () => {
   return (
     <SafeAreaView className="bg-white h-full">
       <View className="">
         <Image
-          className = "w-28 h-28 rounded-full object-cover"
+          className = "w-72 h-52 self-center object-cover"
           source={Logo}
         />
       </View>
+      <NavOptions/>
     </SafeAreaView>
   )
 }
