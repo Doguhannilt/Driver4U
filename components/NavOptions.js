@@ -23,7 +23,6 @@ const HomeScreen = () => {
                     }
                 </Text>
             </View>
-
             <NavOptionsCard data={data} />
         </View>
     );
