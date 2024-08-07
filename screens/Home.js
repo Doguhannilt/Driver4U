@@ -12,6 +12,9 @@ import { GOOGLE_KEY } from '@env'
 // Components
 import NavOptions from '../components/NavOptions'
 import { setDestination, setOrigin } from '../redux/slices/navSlice'
+
+
+
 // Redux
 import { useDispatch } from 'react-redux'
 
@@ -50,8 +53,12 @@ const Home = () => {
         debounce={400}
         styles={autocompleteStyles}
       />
+    
 
       <NavOptions />
+    
+     
+
     </SafeAreaView>
   );
 }
@@ -65,10 +72,12 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === 'android' ? 0 : 20 // Android'da ek boşluk olmaması için
   },
   logoContainer: {
+    paddingBottom: 20,
     alignItems: 'center',
     marginBottom: 10 // Gerekirse burayı ayarlayın
   },
   logo: {
+   marginTop:20,
     width: 288, // 72 * 4
     height: 208, // 52 * 4
     resizeMode: 'cover'
