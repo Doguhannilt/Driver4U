@@ -13,7 +13,7 @@ const HomeScreen = () => {
     const origin = useSelector(selectOrigin)
 
     return (
-        <View className="flex-1 bg-white">
+        <View className=" bg-white">
 
             <View className="p-4 bg-white shadow-md">
                 <Text className="text-2xl font-bold">
