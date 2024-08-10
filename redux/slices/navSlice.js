@@ -28,6 +28,7 @@ export const {
     setTravelTimeInformation
 } = navSlice.actions
 
+{/* Selectors */}
 export const selectOrigin = (state) => state.nav.origin
 export const selectdestination = (state) => state.nav.destination
 export const selecttravelTimeInformation= (state) => state.nav.travelTimeInformation
