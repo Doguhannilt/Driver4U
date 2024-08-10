@@ -14,10 +14,12 @@ const MapScreen = () => {
   return (
     <View>
 
-
+      {/* FIRST SECTION */}
       <View className="h-1/2">
         <Map />
       </View>
+
+      {/* SECOND SECTION */}  
       <View className="h-1/2">
         <Stack.Navigator>
           <Stack.Screen
@@ -27,7 +29,8 @@ const MapScreen = () => {
               headerShown: false
             }}
           />
-      
+          
+        {/* THIRD SECTION */}
           <Stack.Screen
             name='RideOptionsCard'
             component={RideOptionsCard}

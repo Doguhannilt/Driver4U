@@ -12,11 +12,12 @@ import { GOOGLE_KEY } from '@env'
 // Components
 import NavOptions from '../components/NavOptions'
 import { setDestination, setOrigin } from '../redux/slices/navSlice'
-
+import ProfileDisplay from './profile/ProfileDisplay'
 
 
 // Redux
 import { useDispatch } from 'react-redux'
+
 
 const Home = () => {
 
@@ -24,12 +25,14 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <ProfileDisplay />
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
           source={Logo}
         />
       </View>
+     
 
       <GooglePlacesAutocomplete
         placeholder='Where From?'
@@ -53,12 +56,7 @@ const Home = () => {
         debounce={400}
         styles={autocompleteStyles}
       />
-    
-
       <NavOptions />
-    
-     
-
     </SafeAreaView>
   );
 }
@@ -74,10 +72,10 @@ const styles = StyleSheet.create({
   logoContainer: {
     paddingBottom: 20,
     alignItems: 'center',
-    marginBottom: 10 // Gerekirse burayı ayarlayın
+    marginBottom: 2 // Gerekirse burayı ayarlayın
   },
   logo: {
-   marginTop:20,
+   marginTop:0,
     width: 288, // 72 * 4
     height: 208, // 52 * 4
     resizeMode: 'cover'
