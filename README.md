@@ -1,6 +1,4 @@
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/6efc8516-bdd2-463f-a97d-e068f4a12980" width="300"/>
-</div>
+
 
 ### Driver4U
 
@@ -21,14 +19,29 @@
 - **Location Selection**: Users can easily select their pickup and drop-off points using an intuitive map interface.
 - **Real-time Updates**: Provides real-time updates on fare changes and ride status.
 
-**Images**
+**UPDATES**
+
+```
+- Login - Sign Up Page Created
+- Backend: MongoDB, Express, JWT
+- Frontend: RTK Query
+```
+
+**UPDATE IMAGES**
+<br></br>
+<img src="https://github.com/user-attachments/assets/6307a369-e555-4bd9-bf7d-12920e9aa5b3" width='200'/>
+<img src="https://github.com/user-attachments/assets/5bb8c21c-a3bb-4af0-87d5-d24fcc3887b1" width='200'/>
+<img src="https://github.com/user-attachments/assets/976b9370-8dce-49d9-9da1-386321c9a2c3" width='200'/>
+
+
+<br></br>
+**Images (GENERAL)**
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/f84bf456-ab11-4bcc-902c-4a0feb084a9c" width='250'/>
-<img src="https://github.com/user-attachments/assets/7b117e14-3e65-42d3-aec8-755bbb13082b" width='250'/>
-<img src="https://github.com/user-attachments/assets/0c64ea38-f2d0-43f8-ad78-247cb0112a20" width='250'/>
-<img src="https://github.com/user-attachments/assets/d6e2cf99-353a-4ee2-b99b-52fcf2b54b90" width='250'/>
-<img src="https://github.com/user-attachments/assets/74478e07-6eb8-449f-b6d1-80f61d764a94" width='250'/>
+<img src="https://github.com/user-attachments/assets/7b117e14-3e65-42d3-aec8-755bbb13082b" width='200'/>
+<img src="https://github.com/user-attachments/assets/0c64ea38-f2d0-43f8-ad78-247cb0112a20" width='200'/>
+<img src="https://github.com/user-attachments/assets/d6e2cf99-353a-4ee2-b99b-52fcf2b54b90" width='200'/>
+<img src="https://github.com/user-attachments/assets/74478e07-6eb8-449f-b6d1-80f61d764a94" width='200'/>
 </div>
 
 ## Dependencies
