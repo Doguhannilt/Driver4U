@@ -5,7 +5,7 @@ import {
     logoutUser,
 
 }
-from '../controller/userController.js'
+    from '../controller/userController.js'
 
 
 
@@ -13,7 +13,7 @@ const router = express.Router()
 
 
 router
-    .route('/')
+    .route('/create')
     .post(createUser)
 
 router
@@ -22,7 +22,7 @@ router
 
 router
     .route("/logout")
-    .post(logoutUser)
+    .get(logoutUser)
 
 
 export default router
