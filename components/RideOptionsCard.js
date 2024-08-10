@@ -16,11 +16,12 @@ const RideOptionsCard = () => {
   return (
     <SafeAreaView className="bg-white flex-grow">
       <View>
-
+        {/* HEADER */}
         <Text className="text-center text-xl py-5">
           Select A Ride - {travelTimeInformation?.distance.text}
         </Text>
 
+        {/* CAR DATA */}  
         <FlatList
           data={data}
           keyExtractor={(item) => item.id}
@@ -39,7 +40,7 @@ const RideOptionsCard = () => {
                 <Text> {travelTimeInformation?.duration.text}  </Text>
               </View>
               <Text className="text-xl">
-
+                {/* Surge */}
                 {new Intl.NumberFormat('en-gb', {
                   style: 'currency',
                   currency: 'GBP'

@@ -14,17 +14,20 @@ import { GOOGLE_KEY } from '@env'
 
 const Map = () => {
 
+    {/* ORIGIN |DESTINATION | DISPATCH */}
     const origin = useSelector(selectOrigin)
     const destination = useSelector(selectdestination)
     const dispatch = useDispatch();
 
     useEffect(() => {
         if (!origin || !destination) return
-
+    
+        {/* getTravelTime */}
         const getTravelTime = async () => {
             fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin.description}&destinations=${destination.description}&key=${GOOGLE_KEY}`)
                 .then(res => res.json())
                 .then(data => {
+                    {/* setTravelTimeInformation */}
                     dispatch(setTravelTimeInformation(data.rows[0].elements[0]))
                     console.log(data.rows[0].elements[0])
             })

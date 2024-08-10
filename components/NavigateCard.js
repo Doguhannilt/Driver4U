@@ -15,14 +15,15 @@ const NavigateCard = () => {
     const dispatch = useDispatch();
     const navigation = useNavigation()
 
-
     return (
         <SafeAreaView className="bg-white flex-1">
+            {/* HEADER */}
             <Text className="text-sm font-bold text-center text-gray-300 py-5 ">
                 You should select where do you want to go
             </Text>
             <View className=" flex-shrink">
                 <View>
+                    {/* GOOGLE AUTO COMPLETE */}
                     <GooglePlacesAutocomplete
                         placeholder='Where to?'
                         styles={toInputBoxStyles}

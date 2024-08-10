@@ -10,11 +10,12 @@ import { useSelector } from 'react-redux';
 import { selectOrigin } from '../redux/slices/navSlice';
 
 const HomeScreen = () => {
+    
     const origin = useSelector(selectOrigin)
 
     return (
         <View className=" bg-white">
-
+            {/* HEADER */}
             <View className="p-4 bg-white shadow-md">
                 <Text className="text-2xl font-bold">
                     {!origin

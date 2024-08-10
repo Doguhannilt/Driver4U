@@ -11,6 +11,7 @@ const NavOptionsCard = ({ item, data }) => {
     
     return (
         <View className={`${!origin && 'opacity-20'}`}>
+            {/* CARD */}
             <TouchableOpacity
                 onPress={() => navigation.navigate("MapScreen")}
                 className="bg-white p-4 m-2 rounded-lg shadow-md"
